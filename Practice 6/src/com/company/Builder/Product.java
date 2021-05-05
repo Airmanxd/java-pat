@@ -20,5 +20,14 @@ public class Product {
             pr.name = this.name;
             return pr;
         }
+
+
+    }
+    public String getName() {
+        return name;
+    }
+
+    public int getCost() {
+        return cost;
     }
 }

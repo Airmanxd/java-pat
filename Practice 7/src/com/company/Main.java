@@ -1,8 +1,13 @@
 package com.company;
 
+import com.company.Facade.Facade;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Facade facade = new Facade();
+        facade.the_point();
+
+
     }
 }

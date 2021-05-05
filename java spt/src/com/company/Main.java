@@ -12,9 +12,9 @@ public class Main {
             while(!a.equals(b))
             {
                 if (a>b)
-                    a %= b;
-                else
-                    b %= a;
+                    a -= b;
+                else if(a<b)
+                    b -= a;
             }
             return a;
         };

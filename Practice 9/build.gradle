@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+group 'main.java'
+version '1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+
+    finalizedBy {
+        copyJar
+    }
+}
+
+task copyJar(type: Copy) {
+    from jar
+    into 'dockerdir'
+    finalizedBy {
+        buildDockerImage
+    }
+}
+
+task buildDockerImage(type: Exec) {
+    workingDir 'dockerdir'
+    commandLine 'docker', 'build', '-t', "${project.name}:${project.version}", '.'
+    finalizedBy {
+        runDockerContainer
+    }
+}
+
+task runDockerContainer(type: Exec) {
+    workingDir 'dockerdir'
+    commandLine 'docker', 'run', "${project.name}:${project.version}"
+}
