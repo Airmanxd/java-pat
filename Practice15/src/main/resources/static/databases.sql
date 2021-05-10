@@ -1,5 +1,5 @@
 create table Departures (
-id int,
+id INTEGER,
 type varchar(100),
 departureDate varchar(10)
 );

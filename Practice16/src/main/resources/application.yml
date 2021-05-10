@@ -1,11 +1,17 @@
-server:
-  port: ${SERVER_PORT}
-
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+    schema: classpath*:static/database.sql
+    initialization-mode: always
   jpa:
-    show-sql: false
-    open-in-view: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: true
+    generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+  session:
+    store-type: none
