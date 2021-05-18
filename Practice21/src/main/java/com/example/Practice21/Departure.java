@@ -28,4 +28,8 @@ public class Departure {
     @JoinColumn(name="postOffice_id")
     public PostOffice postOffice;
 
+    @Override
+    public String toString() {
+        return "Departure " + this.id + "\ntype: " + this.type + "\nDeparture date: " + this.departureDate;
+    }
 }

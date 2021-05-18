@@ -22,5 +22,4 @@ public class PostOffice {
     private String cityName;
     @OneToMany(mappedBy = "postOffice")
     public List<Departure> departures;
-
 }

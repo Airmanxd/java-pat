@@ -14,7 +14,6 @@ public final class Singleton2 {
                 }
             }
         }
-
         return instance;
     }
 }

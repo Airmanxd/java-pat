@@ -21,6 +21,4 @@ public class Departure {
     private String type;
     @Column
     private String departureDate;
-
-
 }

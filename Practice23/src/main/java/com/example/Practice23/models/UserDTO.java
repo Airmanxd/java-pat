@@ -17,5 +17,4 @@ public class UserDTO {
     @NotEmpty
     private String password;
     private String matchingPassword;
-
 }

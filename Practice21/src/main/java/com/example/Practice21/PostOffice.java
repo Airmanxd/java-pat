@@ -26,4 +26,8 @@ public class PostOffice {
     @OneToMany(mappedBy = "postOffice")
     public List<Departure> departures;
 
+    @Override
+    public String toString() {
+        return "Post Office: " + this.id + "\nname: " + this.name + "\nCity name: " + this.cityName;
+    }
 }

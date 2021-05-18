@@ -24,6 +24,4 @@ public class Departure {
     @JsonIgnore
     @JoinColumn(name="postOffice_id")
     public PostOffice postOffice;
-
-
 }

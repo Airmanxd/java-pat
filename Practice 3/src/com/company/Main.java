@@ -7,11 +7,11 @@ public class Main {
 
     public static void settest(Set<Integer> set) throws InterruptedException {
         Thread thread1 = new Thread(() -> {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
                 set.add(i);
         });
         Thread thread2 = new Thread(() -> {
-            for (int i = 30; i < 40; i++)
+            for (int i = 20; i < 30; i++)
                 set.add(i);
         });
         thread1.start();
